@@ -46,4 +46,111 @@ Role of Authentication in Web Applications:
 
 Secure user verification for accessing protected resources (e.g., purchases, sensitive information).
 
+This repository contains the backend for the E-commerce Follow-Along project. The backend provides APIs to handle the core functionalities required for the e-commerce platform, including user management, product management, orders, and authentication.
+
+Features
+
+User Management: Registration, login, and user profile management.
+
+Product Management: CRUD operations for products.
+
+Order Management: Create, view, and manage orders.
+
+Authentication: Secure user authentication using JWT.
+
+Database Integration: Store data in a database (e.g., MongoDB or MySQL).
+
+Error Handling: Comprehensive error handling for API responses.
+
+File Uploads: Support for uploading and storing user files (e.g., images) using Multer.
+
+Technologies Used
+
+Programming Language: JavaScript (Node.js)
+
+Framework: Express.js
+
+Database: MongoDB (or MySQL, depending on your setup)
+
+Authentication: JSON Web Tokens (JWT)
+
+Other Libraries:
+
+bcrypt (for password hashing)
+
+dotenv (for environment variables)
+
+mongoose (for MongoDB integration)
+
+multer (for handling file uploads)
+
+Getting Started
+
+Prerequisites
+
+Node.js installed on your system
+
+MongoDB or MySQL database set up
+
+Installation
+
+Clone this repository:
+
+git clone <repository-url>
+
+Navigate to the project directory:
+
+cd Ecommerce-Follow-Along/Backend
+
+Install dependencies:
+
+npm install
+
+Create a .env file in the root directory and add the following environment variables:
+
+PORT=8000
+DATABASE_URL=<your-database-connection-string>
+JWT_SECRET=<your-secret-key>
+
+Created the User Model:
+
+Designed a schema for user data using Mongoose.
+
+Included fields such as name, email, password, and profilePicture.
+
+Implemented the User Controller:
+
+Added logic to handle user-related operations such as registration and profile management.
+
+Integrated error handling for invalid or missing data.
+
+Set Up Multer for File Uploads:
+
+Configured Multer to handle file uploads (e.g., profile pictures).
+
+Stored uploaded files in the uploads/ directory.
+
+Updated the README:
+
+Documented the progress made in this milestone, including the new features and APIs.
+
+Contributing
+
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+
+Create a new branch:
+
+git checkout -b feature-name
+
+Make your changes and commit them:
+
+git commit -m "Add some feature"
+
+Push to the branch:
+
+git push origin feature-name
+
+Submit a pull request.
 
