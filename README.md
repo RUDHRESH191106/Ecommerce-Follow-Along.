@@ -1,156 +1,76 @@
-Milestone #1 
-# Ecommerce-Follow-Along.
+# E-Commerce Application (MERN Stack)  
 
-Overview:
-Key Features of the Project:
+Welcome to the E-Commerce Application project! This project is part of the **Follow Along Project: Milestone 1**, where we will learn to build a full-fledged e-commerce application from scratch using the **MERN stack** (MongoDB, Express.js, React.js, Node.js).  
 
-1. MERN Stack: The project will use MongoDB, Express, React, and Node.js for development.
- 
-2. REST API Creation: Learn to build scalable APIs guided by mentors.
-   
-3. Authentication: Implement secure login and registration.
-  
-4. Database Schema Design: Create structured data models using MongoDB.
-  
-5. Backend Development: Develop server-side logic using Node.js and Express.
-  
-6. Frontend Development: Build the user interface with React.
+## Project Overview  
+The goal of this project is to provide hands-on experience with real-world development concepts and tools. By the end of this project, you will have a functional e-commerce application with features like user authentication, product management, and order handling.  
 
-7. e-commerce application: Its functionality, UI, front-end and back-end integration.
+## Learning Goals 
+- Understand the overall structure of a MERN stack project.  
+- Set up a new project repository and initialize it effectively.  
+- Gain clarity on the functionalities of an e-commerce application.  
+- Learn the foundational steps of backend development, database schema design, and REST API creation.  
 
-Overview of MERN Stack:
+## Key Features  
+1. **MERN Stack:** A JavaScript-only approach for full-stack development.  
+2. **REST API Creation:** Scalable endpoints for user authentication, product management, and order handling.  
+3. **Authentication:** Secure login and registration functionalities.  
+4. **Database Schema Design:** Structured data models using MongoDB.  
+5. **Backend Development:** Robust server-side logic with Node.js and Express.  
+6. **Frontend:** React for building a dynamic and user-friendly interface.  
 
-Full Form:
+## Milestone 1 Overview  
+- **Introduction to the MERN Stack:** Understanding the technologies and how they work together.  
+- **REST API Structure:** Building endpoints for essential features like user authentication, product management, and order handling.  
+- **Database Schema Design:** Creating well-structured data models in MongoDB.  
+- **Authentication:** Learning the role of authentication in web applications and implementing it.  
+## Milestone 2:
+Project Structure and Login Page
 
-M: MongoDB – A NoSQL database used for storing application data in a flexible, document-based format.
- 
-E: Express.js – A lightweight and fast web framework for Node.js that simplifies building robust APIs and server-side logic.
-     
-R: React – A JavaScript library for building dynamic, interactive, and component-based user interfaces.
-     
-N: Node.js – A runtime environment that allows JavaScript to run on the server, enabling full-stack development using a single language.
-     
-A full-stack JavaScript framework for developing web applications.
-Streamlined development with a single language (JavaScript) across front-end and back-end.
 
-REST API Structure and Endpoints:
+Created a structured folder hierarchy for separating frontend and backend code.
 
-Learn to design APIs for user authentication, product management, and order handling.
-APIs will communicate with the database and serve JSON responses.
+Set up the React application for the frontend and a Node.js server for the backend.
 
-Basics of Database Schema Design:
+Configured Tailwind CSS for streamlined styling.
 
-Learn to define and structure data relationships in MongoDB.
+Developed a functional and styled Login Page for the frontend.
 
-Role of Authentication in Web Applications:
+Outcome: Project was structured, and the first user-facing feature (Login Page) was implemented.
 
-Secure user verification for accessing protected resources (e.g., purchases, sensitive information).
+## Milestone 3:
+Backend Setup and Database Connection
 
-This repository contains the backend for the E-commerce Follow-Along project. The backend provides APIs to handle the core functionalities required for the e-commerce platform, including user management, product management, orders, and authentication.
 
-Features
+Created a dedicated folder structure for organizing backend code (routes, controllers, models, etc.).
 
-User Management: Registration, login, and user profile management.
+Configured a Node.js server with Express.js to handle API requests.
 
-Product Management: CRUD operations for products.
+Connected the backend to MongoDB for data storage.
 
-Order Management: Create, view, and manage orders.
+Implemented basic error handling for better debugging.
 
-Authentication: Secure user authentication using JWT.
+Outcome: Backend setup was completed with MongoDB integration, making the application ready for further development.
 
-Database Integration: Store data in a database (e.g., MongoDB or MySQL).
+## Milestone 4:
+User Model, Controller, and File Uploads
 
-Error Handling: Comprehensive error handling for API responses.
 
-File Uploads: Support for uploading and storing user files (e.g., images) using Multer.
+Designed the User Model with a schema defining user details (e.g., name, email, password).
 
-Technologies Used
+Developed the User Controller to manage user data operations like adding or fetching users.
 
-Programming Language: JavaScript (Node.js)
+Integrated Multer to enable file uploads (e.g., profile pictures) and store them in the backend.
 
-Framework: Express.js
+## Milestone 5:
+In this milestone, we focused on developing the signup page to enable users to create an account within the application. Key achievements include: Signup Page Implementation: Developed the Signup.jsx component with a user-friendly interface for account registration. Included form fields for user details such as name, email, and password. Form Validation: Added client-side validation logic to ensure proper input formatting and error messages for invalid entries. Integration with Routing: Configured navigation to and from the signup page using React Router for seamless user flow. Styling: Enhanced the design of the signup page to align with the application's overall styling for a consistent user experience. Code Organization: Refactored the code into reusable components where possible to promote cleaner and more maintainable code. This milestone enhances the user experience by allowing new users to register, paving the way for further integration with back-end user authentication systems.
 
-Database: MongoDB (or MySQL, depending on your setup)
+## Milestone 6:
+In this milestone, we completed the following:
 
-Authentication: JSON Web Tokens (JWT)
-
-Other Libraries:
-
-bcrypt (for password hashing)
-
-dotenv (for environment variables)
-
-mongoose (for MongoDB integration)
-
-multer (for handling file uploads)
-
-Getting Started
-
-Prerequisites
-
-Node.js installed on your system
-
-MongoDB or MySQL database set up
-
-Installation
-
-Clone this repository:
-
-git clone <repository-url>
-
-Navigate to the project directory:
-
-cd Ecommerce-Follow-Along/Backend
-
-Install dependencies:
-
-npm install
-
-Create a .env file in the root directory and add the following environment variables:
-
-PORT=8000
-DATABASE_URL=<your-database-connection-string>
-JWT_SECRET=<your-secret-key>
-
-Created the User Model:
-
-Designed a schema for user data using Mongoose.
-
-Included fields such as name, email, password, and profilePicture.
-
-Implemented the User Controller:
-
-Added logic to handle user-related operations such as registration and profile management.
-
-Integrated error handling for invalid or missing data.
-
-Set Up Multer for File Uploads:
-
-Configured Multer to handle file uploads (e.g., profile pictures).
-
-Stored uploaded files in the uploads/ directory.
-
-Updated the README:
-
-Documented the progress made in this milestone, including the new features and APIs.
-
-Contributing
-
-Contributions are welcome! Please follow these steps:
-
-Fork the repository.
-
-Create a new branch:
-
-git checkout -b feature-name
-
-Make your changes and commit them:
-
-git commit -m "Add some feature"
-
-Push to the branch:
-
-git push origin feature-name
-
-Submit a pull request.
-
+- Implemented advanced product filtering and search functionality.
+- Optimized backend API endpoints for better performance.
+- Integrated payment processing using Stripe.
+- Enhanced user authentication with JWT expiration handling.
+- Improved UI/UX by refining product pages and checkout flows.
+- Fixed bugs from previous milestones and improved error handling.
