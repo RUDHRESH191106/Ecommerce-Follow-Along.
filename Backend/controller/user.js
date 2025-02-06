@@ -1,4 +1,3 @@
-
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
@@ -7,12 +6,11 @@ const router = express.Router();
 const { upload } = require("../multer");
 const ErrorHandler = require("../utility/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncError");
+const jwt = require("../jsonwebtoken");
+const sendMail = require("../utils/sendMail");
+const sendToken = require("../utils/sendToken");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
-
-
-
-
 
 
 router.post(
@@ -58,9 +56,11 @@ router.post(
  
 
 
-router.post("/login", catchAsyncErrors(async (req, res, next) => {
+router.post("/login", 
+  catchAsyncErrors(async (req, res, next) => {
     console.log("Logging in user...");
     const { email, password } = req.body;
+    
     if (!email || !password) {
         return next(new ErrorHandler("Please provide email and password", 400));
     }
@@ -83,3 +83,5 @@ router.post("/login", catchAsyncErrors(async (req, res, next) => {
 
 
 module.exports = router;
+
+
