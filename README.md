@@ -74,3 +74,30 @@ In this milestone, we completed the following:
 - Enhanced user authentication with JWT expiration handling.
 - Improved UI/UX by refining product pages and checkout flows.
 - Fixed bugs from previous milestones and improved error handling.
+
+## Milestone 7:
+Login Authentication System
+1. User Enters Credentials:
+   The user provides their email/username and password on the login page.
+
+2. Fetch User Data from Database:
+   The backend retrieves the user record based on the provided email/username.
+   If the user is not found, return an error: "User does not exist."
+
+3. Compare Encrypted Passwords:
+    Process the user's input password using the same hashing algorithm (e.g., bcrypt).
+    Compare the resulting hash to the stored hashed password.
+    If they match, the user is authenticated; if not, send an error.
+
+4. Create Login Endpoint:
+   Accept user credentials (email/username and password).
+   Retrieve the corresponding user from the database.
+
+5. Validate Password:
+   Use bcrypt to hash the entered password.
+   Compare it with the stored hashed password for authentication.
+
+6. Return Response:
+   If authentication is successful, generate and return a session/token.
+   If authentication fails, return an error message.
+
