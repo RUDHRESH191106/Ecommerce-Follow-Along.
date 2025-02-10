@@ -1,107 +1,78 @@
-# E-Commerce Application (MERN Stack)  
+Ecommerce-Follow-Along
+Project Description
 
-Welcome to the E-Commerce Application project! This project is part of the **Follow Along Project: Milestone 1**, where we will learn to build a full-fledged e-commerce application from scratch using the **MERN stack** (MongoDB, Express.js, React.js, Node.js).  
+The Ecommerce Follow Along project is designed to help developers build a full-stack e-commerce web application using the MERN stack (MongoDB, Express, React, and Node.js). This project follows a hands-on approach, where you will learn and implement key concepts such as user authentication, product management, and order handling through RESTful APIs. By the end of the project, you will have built a functioning e-commerce platform with core features, using JavaScript across both the client and server side.
 
-## Project Overview  
-The goal of this project is to provide hands-on experience with real-world development concepts and tools. By the end of this project, you will have a functional e-commerce application with features like user authentication, product management, and order handling.  
+The MERN stack allows for a seamless and efficient development process, providing a unified language (JavaScript) for the entire stack, making it easier for developers to build, scale, and maintain web applications.
 
-## Learning Goals 
-- Understand the overall structure of a MERN stack project.  
-- Set up a new project repository and initialize it effectively.  
-- Gain clarity on the functionalities of an e-commerce application.  
-- Learn the foundational steps of backend development, database schema design, and REST API creation.  
+**Milestone 1: **
 
-## Key Features  
-1. **MERN Stack:** A JavaScript-only approach for full-stack development.  
-2. **REST API Creation:** Scalable endpoints for user authentication, product management, and order handling.  
-3. **Authentication:** Secure login and registration functionalities.  
-4. **Database Schema Design:** Structured data models using MongoDB.  
-5. **Backend Development:** Robust server-side logic with Node.js and Express.  
-6. **Frontend:** React for building a dynamic and user-friendly interface.  
+Project Overview In this milestone, we introduced the foundations of building a full-stack e-commerce application using the MERN stack. Key topics covered include:
 
-## Milestone 1 Overview  
-- **Introduction to the MERN Stack:** Understanding the technologies and how they work together.  
-- **REST API Structure:** Building endpoints for essential features like user authentication, product management, and order handling.  
-- **Database Schema Design:** Creating well-structured data models in MongoDB.  
-- **Authentication:** Learning the role of authentication in web applications and implementing it.  
-## Milestone 2:
-Project Structure and Login Page
+Overview of the MERN Stack The MERN stack is a popular set of technologies used for building modern, scalable, and fast web applications. The stack consists of: MongoDB (database) Express.js (backend framework) React.js (frontend library) Node.js (JavaScript runtime) The key advantage of MERN is its JavaScript-only approach, where both the front-end and back-end are built using JavaScript, making development easier and more efficient.
+REST API Structure and Endpoints We explored REST APIs (Representational State Transfer) and their role in allowing communication between the client and server. Key API endpoints were introduced to handle: User Authentication: Register and log in users with secure authentication. Product Management: Add, update, and retrieve product data. Order Handling: Manage customer orders from creation to checkout. These APIs interact with the database, responding with data in JSON format.
+Basics of Database Schema Design In MongoDB, schema design involves defining the structure of data stored in the database, including relationships between different collections such as users, products, and orders. The schema plays a critical role in ensuring data consistency and making it easier to query.
+Role of Authentication in Web Applications Authentication verifies the identity of a user before granting access to certain features or data. In this project, we focused on building secure authentication mechanisms, allowing users to register, log in, and manage their orders. We implemented techniques like JWT (JSON Web Tokens) to securely handle user sessions. Features Implemented User Authentication:
+Sign up and login features using JWT for secure sessions. Product Management:
 
+Add, update, and view products within the e-commerce platform. Order Management:
 
-Created a structured folder hierarchy for separating frontend and backend code.
+Create, update, and view customer orders.
 
-Set up the React application for the frontend and a Node.js server for the backend.
+Milestone 2: Project Setup and Login Page
 
-Configured Tailwind CSS for streamlined styling.
+In this milestone, we focused on setting up the initial front-end structure and implementing the login page for the application. Key achievements include:
 
-Developed a functional and styled Login Page for the frontend.
+Front-End Framework: Set up the React framework with Vite for a fast and modern development experience. Folder Structure: Organized the src folder to include separate directories for components, pages, and assets to improve scalability and maintainability. Login Page Implementation: Developed a basic login page (Login.jsx) that includes a user interface for email and password input. Incorporated validation logic to ensure proper user input. Routing: Implemented React Router for navigation and created routes for the login and signup pages. Styling: Added basic styling using CSS (App.css) to ensure a clean and user-friendly design. Git Integration: Added the new files to version control and committed progress to the GitHub repository. This milestone lays the groundwork for creating the front-end interface and interaction logic for the application.
 
-Outcome: Project was structured, and the first user-facing feature (Login Page) was implemented.
+Milestone 3: Project Setup for Backend
+In this milestone, the foundational backend structure for the e-commerce application was successfully established. Key achievements include:
 
-## Milestone 3:
-Backend Setup and Database Connection
+Backend Folder Structure: Organized the project into clearly defined folders (config, controller, db, middleware, model, and utility) to ensure scalability and maintainability. Database Integration: Set up a connection to MongoDB using Mongoose, enabling seamless interaction with the database. Environment Configuration Implemented a .env file to securely manage sensitive data such as database credentials, ensuring better security practices. Middleware Implementation Created essential middleware for authentication, error handling, and asynchronous error management to streamline request processing and ensure robust error handling. Utility Functions -Added reusable utility components like a custom error handler to improve consistency and simplify debugging.
 
+Git Integration Configured version control with Git and included a .gitignore file to exclude sensitive files and unnecessary folders like node_modules. This milestone sets up a solid backend foundation for further development, including API implementation, user authentication, and business logic handling. It ensures that the project is structured, secure, and ready for future expansion.
 
-Created a dedicated folder structure for organizing backend code (routes, controllers, models, etc.).
+Milestone 4: Creating User Model and Controller
+In this milestone, the focus was on implementing the user model and controller for managing user data and operations in the backend. Key achievements include:
 
-Configured a Node.js server with Express.js to handle API requests.
+User Model: Created a User schema using Mongoose to define the structure for storing user information in the MongoDB database. Fields include essential user details such as name, email, password, and timestamps. Added validation for required fields and unique constraints for the email field. Password Hashing: Implemented password hashing using bcrypt to securely store user passwords in the database. User Controller: Developed a user controller to handle user-related backend operations such as registration and login. Added methods for creating new users and retrieving user details. API Endpoints: Set up API routes for user-related operations, including: /api/users/register: Endpoint to register a new user. /api/users/login: Endpoint to authenticate a user. Error Handling: Added error handling for scenarios such as duplicate email registration and invalid login credentials. Git Integration: Committed progress to version control, ensuring proper documentation of changes and updates. This milestone provides the necessary backend infrastructure to manage user data, supporting future features like user authentication and authorization.
 
-Connected the backend to MongoDB for data storage.
-
-Implemented basic error handling for better debugging.
-
-Outcome: Backend setup was completed with MongoDB integration, making the application ready for further development.
-
-## Milestone 4:
-User Model, Controller, and File Uploads
-
-
-Designed the User Model with a schema defining user details (e.g., name, email, password).
-
-Developed the User Controller to manage user data operations like adding or fetching users.
-
-Integrated Multer to enable file uploads (e.g., profile pictures) and store them in the backend.
-
-## Milestone 5:
+Milestone 5: Creating the Signup Page
 In this milestone, we focused on developing the signup page to enable users to create an account within the application. Key achievements include: Signup Page Implementation: Developed the Signup.jsx component with a user-friendly interface for account registration. Included form fields for user details such as name, email, and password. Form Validation: Added client-side validation logic to ensure proper input formatting and error messages for invalid entries. Integration with Routing: Configured navigation to and from the signup page using React Router for seamless user flow. Styling: Enhanced the design of the signup page to align with the application's overall styling for a consistent user experience. Code Organization: Refactored the code into reusable components where possible to promote cleaner and more maintainable code. This milestone enhances the user experience by allowing new users to register, paving the way for further integration with back-end user authentication systems.
 
-## Milestone 6:
-In this milestone, we completed the following:
+Milestone 6: creating the backend endpoint for the Signup page to store all user data securely
+Create a secure backend endpoint for user signup, encrypting passwords and storing user data safely.
 
-- Implemented advanced product filtering and search functionality.
-- Optimized backend API endpoints for better performance.
-- Integrated payment processing using Stripe.
-- Enhanced user authentication with JWT expiration handling.
-- Improved UI/UX by refining product pages and checkout flows.
-- Fixed bugs from previous milestones and improved error handling.
+Goals: -Encrypt passwords before saving. -Securely store user details in the database.
 
-## Milestone 7:
-Login Authentication System
-1. User Enters Credentials:
-   The user provides their email/username and password on the login page.
+Why Encrypt Passwords? -Protect Data: Keeps passwords safe if breached. -Privacy: Prevents password visibility. -Compliance: Meets GDPR, PCI-DSS standards. -Security: Thwarts password theft.
 
-2. Fetch User Data from Database:
-   The backend retrieves the user record based on the provided email/username.
-   If the user is not found, return an error: "User does not exist."
+Steps:
 
-3. Compare Encrypted Passwords:
-    Process the user's input password using the same hashing algorithm (e.g., bcrypt).
-    Compare the resulting hash to the stored hashed password.
-    If they match, the user is authenticated; if not, send an error.
+Milestone 7: Creating the Login Endpoint
+In this milestone, we focused on implementing a secure and efficient login endpoint for user authentication. Key achievements include:
 
-4. Create Login Endpoint:
-   Accept user credentials (email/username and password).
-   Retrieve the corresponding user from the database.
+Login Endpoint Creation: Developed an API endpoint (/api/users/login) to handle user login requests. Configured the endpoint to accept user credentials, such as email/username and password.
+User Retrieval: Implemented logic to retrieve the corresponding user from the MongoDB database based on the provided email or username.
+Password Validation: Utilized bcrypt to compare the hashed password entered by the user with the stored hashed password in the database. Ensured that only valid credentials allow user authentication while providing appropriate error messages for invalid inputs.
+Error Handling: Added robust error handling to return informative responses for scenarios such as: Non-existent users. Incorrect passwords.
+Security Enhancements: Ensured that sensitive user data, such as passwords, remains protected during authentication. Followed industry best practices to prevent common vulnerabilities, such as brute force attacks. This milestone provides the foundation for user authentication, paving the way for implementing session management and token-based authentication in future milestones.
+Milestone 8: Designing the Homepage and Card Component
+In this milestone, we focused on creating a visually appealing and functional homepage layout with reusable components for showcasing products. Key achievements include:
 
-5. Validate Password:
-   Use bcrypt to hash the entered password.
-   Compare it with the stored hashed password for authentication.
+Card Component: Designed a reusable card component for displaying product details. Configured props to dynamically render product information such as: Product Name Product Image Product Price
+Homepage Layout: Set up a clean and responsive homepage layout for displaying multiple product cards. Utilized grid layout and flexbox to ensure a visually consistent and user-friendly design.
+Component Reusability: Ensured the card component is modular and adaptable for use across different pages of the application.
+Code Submission: Pushed the updated code to the GitHub repository.
+Milestone 9: Creating the Product Form
+In this milestone, we focused on building a form that allows users to add products, including support for multiple product images. Key achievements include:
 
-6. Return Response:
-   If authentication is successful, generate and return a session/token.
-   If authentication fails, return an error message.
+Product Form Implementation: Designed and developed a form to capture essential product details, such as: Product Name Description Price Category Multiple Product Images (file upload support)
+Image Upload Handling: Implemented functionality to allow multiple product images to be uploaded. Ensured proper validation for image formats and file sizes.
+Data Management: Configured state management to handle form inputs efficiently. Validated user inputs before submission to ensure accurate product data.
+Milestone 10: Creating the Product Schema and API Endpoint
+In this milestone, we focused on defining the structure of product data and creating an API endpoint to store product details in MongoDB.
 
-
-
-   
-
+Product Schema Definition: Defined a structured product schema using Mongoose to store product data in MongoDB. Ensured each field has proper validation to maintain data integrity: Name: Required, string Description: Required, string Price: Required, number, with validation for non-negative values Image URL(s): Required, array of strings for multiple image storage Category: Required, string CreatedAt: Automatically generated timestamp
+Endpoint Creation: Developed a POST endpoint (/api/products) to accept product details from the frontend. Implemented validation to ensure only correctly formatted data is stored in the database. Saved product information to MongoDB using Mongoose models.
+Data Validation & Integrity: Enforced strict validation to prevent invalid or incomplete product entries. Returned appropriate error messages for missing or incorrect data inputs.
