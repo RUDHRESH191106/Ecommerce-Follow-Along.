@@ -1,4 +1,3 @@
-
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
@@ -39,6 +38,7 @@ const CreateProduct = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("Hi")
 
 
         const formData = new FormData();
@@ -67,6 +67,7 @@ const CreateProduct = () => {
             if (response.status === 201) {
                 alert("Product created successfully!");
                 setImages([]);
+                setPreviewImages([]);
                 setName("");
                 setDescription("");
                 setCategory("");
@@ -221,4 +222,6 @@ const CreateProduct = () => {
 
 
 export default CreateProduct;
+
+
 
