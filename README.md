@@ -49,7 +49,6 @@ Why Encrypt Passwords? -Protect Data: Keeps passwords safe if breached. -Privacy
 
 Steps:
 
-
 Milestone 7: Creating the Login Endpoint
 In this milestone, we focused on implementing a secure and efficient login endpoint for user authentication. Key achievements include:
 
@@ -58,8 +57,6 @@ User Retrieval: Implemented logic to retrieve the corresponding user from the Mo
 Password Validation: Utilized bcrypt to compare the hashed password entered by the user with the stored hashed password in the database. Ensured that only valid credentials allow user authentication while providing appropriate error messages for invalid inputs.
 Error Handling: Added robust error handling to return informative responses for scenarios such as: Non-existent users. Incorrect passwords.
 Security Enhancements: Ensured that sensitive user data, such as passwords, remains protected during authentication. Followed industry best practices to prevent common vulnerabilities, such as brute force attacks. This milestone provides the foundation for user authentication, paving the way for implementing session management and token-based authentication in future milestones.
-
-
 Milestone 8: Designing the Homepage and Card Component
 In this milestone, we focused on creating a visually appealing and functional homepage layout with reusable components for showcasing products. Key achievements include:
 
@@ -67,19 +64,27 @@ Card Component: Designed a reusable card component for displaying product detail
 Homepage Layout: Set up a clean and responsive homepage layout for displaying multiple product cards. Utilized grid layout and flexbox to ensure a visually consistent and user-friendly design.
 Component Reusability: Ensured the card component is modular and adaptable for use across different pages of the application.
 Code Submission: Pushed the updated code to the GitHub repository.
-
-
 Milestone 9: Creating the Product Form
 In this milestone, we focused on building a form that allows users to add products, including support for multiple product images. Key achievements include:
 
 Product Form Implementation: Designed and developed a form to capture essential product details, such as: Product Name Description Price Category Multiple Product Images (file upload support)
 Image Upload Handling: Implemented functionality to allow multiple product images to be uploaded. Ensured proper validation for image formats and file sizes.
 Data Management: Configured state management to handle form inputs efficiently. Validated user inputs before submission to ensure accurate product data.
-
-
 Milestone 10: Creating the Product Schema and API Endpoint
 In this milestone, we focused on defining the structure of product data and creating an API endpoint to store product details in MongoDB.
 
 Product Schema Definition: Defined a structured product schema using Mongoose to store product data in MongoDB. Ensured each field has proper validation to maintain data integrity: Name: Required, string Description: Required, string Price: Required, number, with validation for non-negative values Image URL(s): Required, array of strings for multiple image storage Category: Required, string CreatedAt: Automatically generated timestamp
 Endpoint Creation: Developed a POST endpoint (/api/products) to accept product details from the frontend. Implemented validation to ensure only correctly formatted data is stored in the database. Saved product information to MongoDB using Mongoose models.
 Data Validation & Integrity: Enforced strict validation to prevent invalid or incomplete product entries. Returned appropriate error messages for missing or incorrect data inputs.
+Milestone 11: Fetching and Displaying Product Data
+In this milestone, we focused on retrieving product data from the backend and dynamically displaying it in the frontend. Key achievements include:
+
+Backend: Creating an API Endpoint to Fetch All Products Developed a GET endpoint (/api/products) in the backend to send all product data to the frontend. Implemented MongoDB queries using Mongoose to retrieve all stored products. Ensured error handling to manage potential issues in fetching data.
+Frontend: Fetching Data from API Created an API call function using fetch or axios in React to retrieve product data from the backend. Managed the fetched data using React useState and useEffect hooks to ensure dynamic updates.
+Displaying Products Dynamically Passed the fetched product data to a ProductCard component. Used the product details (name, image, price, etc.) as props to display them dynamically. Applied responsive CSS styling to create a visually appealing product grid layout.
+Milestone 12: Filtering Products by User Email and Displaying Data
+In this milestone, we focused on filtering products based on the user's email and sending only relevant product data to the frontend. Key achievements include:
+
+Backend: Creating a Filtered API Endpoint Developed a GET endpoint (/api/products/:email) to return products associated with a specific user email. Used Mongoose to query the database and fetch only the products uploaded by the provided email. Implemented error handling to manage scenarios where no products match the email.
+Frontend: Fetching Filtered Data from API Created a function in React to fetch only products uploaded by the logged-in user. Used Axios or Fetch API to make requests to the backend with the logged-in user's email. Managed product data using useState and useEffect hooks.
+Displaying Filtered Products Dynamically Passed the fetched filtered product data to a ProductCard component. Rendered product details such as name, image, price, and description dynamically. Ensured a clean and structured UI using CSS and responsive layout techniques.
