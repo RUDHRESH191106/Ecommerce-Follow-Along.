@@ -1,10 +1,7 @@
-/* eslint-disable react-refresh/only-export-components */
-import Login from "../pages/Login.jsx";
-import Signup from "../pages/Signup.jsx";
-import Home from "../pages/Home.jsx";
-import CreateProduct from "../pages/CreateProduct.jsx";
-import myProduct from "./pages/myProduct.jsx";
-export { Login, Signup, Home, CreateProduct, myProduct }
-
-
-
+export {default as Login} from "../pages/Login.jsx"
+export {default as Signup} from "../pages/Signup.jsx"
+export {default as Home}  from "../pages/Home.jsx"
+export {default as CreateProduct}  from "../pages/createProduct.jsx"
+export {default as MyProducts}  from "../pages/myProducts.jsx"
+export {default as Cart}  from "../pages/cart.jsx"
+export {default as ProductDetails}  from "../pages/productDetails.jsx"
