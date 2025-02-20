@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import Myproduct from "../components/MyProduct"; // <-- Import the Product component
+import Myproduct from "../components/myproduct"; // <-- Import the Product component
 
 export default function MyProducts() {
     const [products, setProducts] = useState([]);
