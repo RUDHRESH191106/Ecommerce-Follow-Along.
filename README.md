@@ -291,3 +291,18 @@ Implemented smooth navigation between these pages using React Router.
 Responsive Design
 Used CSS Flexbox and media queries to ensure the Navbar is fully responsive on all screen sizes (mobile, tablet, desktop).
 Added a hamburger menu for smaller screens to toggle the navigation links.
+
+# Milestone 16: we will create an product info page that display all the product data and choose quantity and add to card button.
+
+-How to new page to display each product.
+-How to add quantity and add to card button
+
+# Milestone 17: we will write an backend endpoint to add products to cart and store in database.
+
+-Edit the user schema to store cart products .
+-Write an end point to receive the product details and store in database.
+
+# Milestone 18: we will create an Backend endpoint for the cart page. We will write the backend logic to fetch all the products inside user cart to display in cart page.
+
+-Create an endpoint to receive request from cart page.
+-Create an backend endpoint to fetch all the products inside cart with user mail.
