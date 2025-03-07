@@ -306,3 +306,75 @@ Added a hamburger menu for smaller screens to toggle the navigation links.
 
 -Create an endpoint to receive request from cart page.
 -Create an backend endpoint to fetch all the products inside cart with user mail.
+
+# Milestone 19: Cart Functionality
+
+Overview
+
+This milestone focuses on implementing the cart functionality in the project. The primary goals include creating a frontend page to display products, providing options to increase or decrease product quantity, and developing backend endpoints to manage these actions.
+
+Objectives
+
+Create a frontend cart page to display products.
+
+Add + and - buttons for each product to adjust quantity.
+
+Implement backend endpoints to handle quantity updates.
+
+Ensure smooth interaction between frontend and backend for cart management.
+
+Steps to Implement
+
+Frontend
+
+Create Cart Page:
+
+Develop a new cart page to list selected products.
+
+Display product details including name, price, and quantity.
+
+Add Quantity Controls:
+
+Implement + and - buttons for each product.
+
+Ensure quantity updates dynamically upon button clicks.
+
+Update State Management:
+
+Maintain cart state using React state management (useState or Redux).
+
+Ensure updates reflect immediately in the UI.
+
+Backend
+
+Set Up Routes:
+
+Create API routes to handle quantity changes.
+
+Example:
+
+POST /cart/increase/:productId → Increase quantity.
+
+POST /cart/decrease/:productId → Decrease quantity.
+
+Implement Handlers:
+
+Modify product quantity in the database.
+
+Validate stock availability before increasing quantity.
+
+Ensure quantity doesn't go below 1.
+
+Connect Frontend with Backend:
+
+Use Axios or Fetch API to make requests.
+
+Update UI based on API responses.
+
+Expected Outcome
+
+A fully functional cart page with interactive quantity controls.
+
+Backend successfully managing quantity updates.
+
+Seamless synchronization between frontend and backend.
