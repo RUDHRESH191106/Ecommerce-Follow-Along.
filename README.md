@@ -378,3 +378,26 @@ A fully functional cart page with interactive quantity controls.
 Backend successfully managing quantity updates.
 
 Seamless synchronization between frontend and backend.
+
+#  Milestone 20
+
+Steps to Implement
+
+Backend
+
+Create an API Endpoint: Develop a backend endpoint (/user/profile) that sends user data including name, email, profile photo, and address.
+
+Handle Address Data: If no address is available, return an empty array or a specific message (No address found).
+
+Set Up CORS: Ensure the frontend can fetch data from the backend.
+
+Frontend
+
+Create Profile Page: Build a React component to fetch and display user data.
+
+Display Profile Section: Show profile photo, name, and email in one section.
+
+Address Section: Display user address if available; otherwise, show No address found.
+
+Add Address Button: Include a button labeled "Add Address" for adding a new address.
+
