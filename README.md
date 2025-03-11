@@ -401,3 +401,8 @@ Address Section: Display user address if available; otherwise, show No address f
 
 Add Address Button: Include a button labeled "Add Address" for adding a new address.
 
+# Milestone 21:we will create an frontend page form for address input.
+
+-Create an frontend form that will will take address.
+-Take country, city, address1, address2, zip code, address type
+
