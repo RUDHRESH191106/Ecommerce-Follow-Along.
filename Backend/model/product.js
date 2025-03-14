@@ -1,62 +1,105 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-const productSchema = new mongoose.Schema(
+const userSchema = new mongoose.Schema({
+  name:{
+    type: String,
+    required: [true, "Please enter your name!"],
+  },
+  email:{
+    type: String,
+    required: [true, "Please enter your email!"],
+  },
+  password:{
+    type: String,
+    required: [true, "Please enter your password"],
+    minLength: [4, "Password should be greater than 4 characters"],
+    select: false,
+  },
+  phoneNumber:{
+    type: Number,
+  },
+  addresses:[
     {
-        name: {
-            type: String,
-            required: [true, "Please provide the product name"],
-        },
-        description: {
-            type: String,
-            required: [true, "Please provide the product description"],
-        },
-        category: {
-            type: String,
-            required: [true, "Please provide the product category"],
-        },
-        tags: {
-            type: [String], // Array of tags
-            default: [],
-        },
-        price: {
-            type: Number,
-            required: [true, "Please provide the product price"],
-        },
-        stock: {
-            type: Number,
-            required: [true, "Please provide the product stock"],
-        },
-        email: {
-            type: String,
-            required: [true, "Please provide an email"],
-            match: [/.+@.+\..+/, "Please provide a valid email address"],
-        },
-        images: {
-            type: [String], // Array of image URLs (base64 or hosted links)
-            required: [true, "Please upload product images"],
-        },
-        createdAt: {
-            type: Date,
-            default: Date.now, // Automatically set the creation date
-        },
-        cart: [
-            {
-                productid: {
-                    type:string,
-                    required: [true, "please provide the product ID"],
-                    unique: true,
-                },
-                quantity: {
-                    type: Number,
-                    required: [true, "Please provide the quantity"],
-                    min: [0, "Quantity cannot be negative"],
-                }
-            },
-        ],
-    },
-    {
-        timestamps: true, 
+      country: {
+        type: String,
+      },
+      city:{
+        type: String,
+      },
+      address1:{
+        type: String,
+      },
+      address2:{
+        type: String,
+      },
+      zipCode:{
+        type: Number,
+      },
+      addressType:{
+        type: String,
+      },
     }
-);
+  ],
+  role:{
+    type: String,
+    default: "user",
+  },
+  avatar:{
+    public_id: {
+      type: String,
+      required: true,
+    },
+    url: {
+      type: String,
+      required: true,
+    },
+ },
+ cart: [
+  {
+    productId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
+    quantity: {
+      type: Number,
+      required: true,
+      min: [1, "Quantity cannot be less than 1"],
+      default: 1,
+    },
+  },
+],
 
-module.exports = mongoose.model("Product", productSchema);
+ createdAt:{
+  type: Date,
+  default: Date.now(),
+ },
+ resetPasswordToken: String,
+ resetPasswordTime: Date,
+});
+
+
+//  Hash password
+userSchema.pre("save", async function (next){
+  if(!this.isModified("password")){
+    next();
+  }
+
+  this.password = await bcrypt.hash(this.password, 10);
+});
+
+// jwt token
+userSchema.methods.getJwtToken = function () {
+  return jwt.sign({ id: this._id}, process.env.JWT_SECRET_KEY,{
+    expiresIn: process.env.JWT_EXPIRES,
+  });
+};
+
+// compare password
+userSchema.methods.comparePassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+module.exports = mongoose.model("User", userSchema);

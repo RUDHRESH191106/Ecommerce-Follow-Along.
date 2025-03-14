@@ -11,8 +11,9 @@ export default function ProductDetails() {
 	const [product, setProduct] = useState(null);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
-	const [quantity, setQuantity] = useState(1); // 1. Initialize quantity state
-    const email = "rudhresh@gmail.com"
+	const [quantity, setQuantity] = useState(0); // 1. Initialize quantity state
+	const email = "akshara@gmail.com";   
+
 	useEffect(() => {
 		const fetchProduct = async () => {
 			try {
@@ -75,7 +76,7 @@ export default function ProductDetails() {
 			</div>
 		);
 	}
-   // add to cart function
+// add to cart function 
 	const addtocart = async () => {
 		try {
 			const response = await axios.post(
@@ -91,6 +92,8 @@ export default function ProductDetails() {
 			console.error("Error adding to cart:", err);
 		}
 	};
+
+
 	return (
 		<>
 			<Nav />
@@ -195,10 +198,7 @@ export default function ProductDetails() {
 							</div>
 
 							<div className="flex flex-wrap gap-x-5 my-3">
-								<button className="bg-black text-white px-5 py-2 rounded-full hover:bg-neutral-800 hover:-translate-y-1.5 active:translate-y-0 transition-transform duration-200 ease-in-out active:duration-0 active:ease-linear"
-								onClick={addtocart}
-								>
-
+								<button className="bg-black text-white px-5 py-2 rounded-full hover:bg-neutral-800 hover:-translate-y-1.5 active:translate-y-0 transition-transform duration-200 ease-in-out active:duration-0 active:ease-linear" onClick={addtocart}>
 									Add to Cart
 								</button>
 							</div>

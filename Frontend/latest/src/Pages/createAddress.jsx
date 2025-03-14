@@ -4,10 +4,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/nav";
 
-
 const CreateAddress = () => {
     const navigate = useNavigate();
-
 
     const [country, setCountry] = useState("");
     const [city, setCity] = useState("");
@@ -15,7 +13,6 @@ const CreateAddress = () => {
     const [address2, setAddress2] = useState("");
     const [zipCode, setZipCode] = useState("");
     const [addressType, setAddressType] = useState("");
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,9 +23,8 @@ const CreateAddress = () => {
             address2,
             zipCode,
             addressType,
-            email: "rudhresh@gmail.com"
+            email: "akshara@gmail.com"
         };
-
 
         try {
             const response = await axios.post(
@@ -47,7 +43,6 @@ const CreateAddress = () => {
             alert("Failed to add address. Please check the data and try again.");
         }
     };
-
 
     return (
         <>
@@ -131,6 +126,5 @@ const CreateAddress = () => {
         </>
     );
 };
-
 
 export default CreateAddress;

@@ -1,49 +1,78 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-// react-app/src/pages/Home.js
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Nav from "../components/nav"
 
-import React, { useEffect, useState } from "react";
-import Product from "../components/Product";
-import nav from "../components/nav";
-export default function Home() {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // For loading state
-  const [error, setError] = useState(null); // For error handling
+function Myproduct({ _id, name, images, description, price }) {
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch("http://localhost:8000/api/v2/product/get-products")
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
+    useEffect(() => {
+        if (!images || images.length === 0) return;
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 2000);
+        return () => clearInterval(interval);
+    }, [images]);
+
+    const currentImage = images && images.length > 0 ? images[currentIndex] : null;
+
+    const handleEdit = () => {
+        navigate(`/create-product/${_id}`);
+    };
+
+    const handleDelete = async () => {
+        try {
+            const response = await axios.delete(
+                `http://localhost:8000/api/v2/product/delete-product/${_id}`
+            );
+            if (response.status === 200) {
+                alert("Product deleted successfully!");
+                // Reload the page or fetch products again
+                window.location.reload();
+            }
+        } catch (err) {
+            console.error("Error deleting product:", err);
+            alert("Failed to delete product.");
         }
-        return res.json();
-      })
-      .then((data) => {
-        setProducts(data.products);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("❌ Error fetching products:", err);
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
+    };
 
-  if (loading) {
-    return <div className="text-center text-white mt-10">Loading products...</div>;
-  }
 
-  if (error) {
-    return <div className="text-center text-red-500 mt-10">Error: {error}</div>;
-  }
-
-  return (
-    <div className="w-full min-h-screen bg-neutral-800">
-      <h1 className="text-3xl text-center text-white py-6">Product Gallery</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
-        {products.map((product) => (
-          <Product key={product._id} {...product} />
-        ))}
-      </div>
-    </div>
-  );
+    return (
+        <>
+      
+            <div className="bg-neutral-200 p-4 rounded-lg shadow-md flex flex-col justify-between">
+                <div className="w-full">
+                    {currentImage && (
+                        <img
+                            src={`http://localhost:8000${currentImage}`}
+                            alt={name}
+                            className="w-full h-56 object-cover rounded-lg mb-2"
+                        />
+                    )}
+                    <h2 className="text-lg font-bold">{name}</h2>
+                    <p className="text-sm opacity-75 mt-2">{description}</p>
+                </div>
+                <div className="w-full mt-4">
+                    <p className="text-lg font-bold my-2">${price.toFixed(2)}</p>
+                    <button
+                        className="w-full text-white px-4 py-2 rounded-md bg-neutral-900 hover:bg-neutral-700 transition duration-300"
+                        onClick={handleEdit}
+                    >
+                        Edit
+                    </button>
+                    <button
+                        onClick={handleDelete}
+                        className="w-full text-white px-4 py-2 rounded-md bg-red-600 hover:bg-red-400 transition duration-300 mt-2"
+                    >
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </>
+    );
 }
+
+export default Myproduct;

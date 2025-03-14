@@ -1,18 +1,14 @@
-
 /* eslint-disable no-unused-vars */
 // src/components/NavBar.jsx
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
-
 
     return (
         <nav className="bg-blue-600">
@@ -62,7 +58,6 @@ const NavBar = () => {
                             )}
                         </button>
                     </div>
-
 
                     <div className="hidden md:flex md:items-center md:justify-center w-full">
                         <ul className="flex space-x-6">
@@ -115,11 +110,23 @@ const NavBar = () => {
                                     Cart
                                 </NavLink>
                             </li>
+
+                            <li>
+                                <NavLink
+                                    to="/profile"
+                                    className={({ isActive }) =>
+                                        isActive
+                                            ? "text-white font-semibold px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                                            : "text-gray-200 hover:text-white px-3 py-2 rounded-md text-sm transition-colors duration-200"
+                                    }
+                                >
+                                    Profile
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                 </div>
             </div>
-
 
             {/* Mobile Menu */}
             {isOpen && (
@@ -178,6 +185,20 @@ const NavBar = () => {
                                 Cart
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/profile"
+                                className={({ isActive }) =>
+                                    isActive
+                                        ? "block text-white font-semibold px-3 py-2 rounded-md text-base transition-colors duration-200"
+                                        : "block text-gray-200 hover:text-white px-3 py-2 rounded-md text-base transition-colors duration-200"
+                                }
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Profile
+                            </NavLink>
+                        </li>
+
                     </ul>
                 </div>
             )}
@@ -185,6 +206,4 @@ const NavBar = () => {
     );
 };
 
-
 export default NavBar;
-

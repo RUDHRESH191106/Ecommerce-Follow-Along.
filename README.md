@@ -406,3 +406,16 @@ Add Address Button: Include a button labeled "Add Address" for adding a new addr
 -Create an frontend form that will will take address.
 -Take country, city, address1, address2, zip code, address type
 
+# Milestone 22: Storing User Address in Database
+Created a backend endpoint to receive and store user address data. Update the User collection to include an address array. Learn how to store and manage multiple addresses for a user.
+
+Backend Updates: Address Storage Endpoint Created a POST endpoint (/api/user/address) to receive address data from the frontend. Validated the received address data before storing it in the database. Updated the User model to include an address array for storing multiple addresses. Implemented error handling to ensure data integrity.
+Frontend Integration Modified the Address Form to send a POST request to the new backend endpoint. Ensured proper state management to handle form input. Provided user feedback (e.g., success message) upon successful address submission.
+
+# Milestone 23: Implementing Order Placement and Address Selection
+Learning Goals 🎯 By the end of this milestone, you will:
+
+Add a "Place Order" button inside the cart page. Create a Select Address Page where users can choose a delivery address. Write a Mongoose schema to store order details in the database.
+
+Frontend Updates: Cart Page & Address Selection Added a "Place Order" button inside the cart page. When clicked, it navigates to the Select Address Page. Displayed all saved addresses for the user. Allowed users to select an address for order delivery.
+Backend Updates: Order Schema & Storage Created a Mongoose schema to store order details, including: User ID (to associate orders with users) Product details (items in the cart) Selected delivery address Order status (pending, shipped, delivered) Total price Timestamp Implemented an endpoint to store orders in the database.
