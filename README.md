@@ -419,3 +419,21 @@ Add a "Place Order" button inside the cart page. Create a Select Address Page wh
 
 Frontend Updates: Cart Page & Address Selection Added a "Place Order" button inside the cart page. When clicked, it navigates to the Select Address Page. Displayed all saved addresses for the user. Allowed users to select an address for order delivery.
 Backend Updates: Order Schema & Storage Created a Mongoose schema to store order details, including: User ID (to associate orders with users) Product details (items in the cart) Selected delivery address Order status (pending, shipped, delivered) Total price Timestamp Implemented an endpoint to store orders in the database.
+
+# Milestone 24 - Order Summary & Checkout
+In this milestone, we implement the Order Summary Page to provide users with a clear overview of their order before placing it.
+
+Features
+Display Ordered Products
+
+Show all the products that the user has added to their cart.
+Include product names, images, quantity, and prices.
+Show Delivery Address
+
+Display the address selected by the user for order delivery.
+Calculate & Display Total Cost
+
+Show the total price of all selected items, including taxes and discounts (if applicable).
+Place Order Button
+
+Provide a "Place Order" button at the bottom to confirm the purchase.
